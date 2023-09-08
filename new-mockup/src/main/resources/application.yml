@@ -1,0 +1,29 @@
+server:
+    port: 8085
+spring:
+    application:
+        name: springboot-minio
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        url: jdbc:mysql://localhost:3306/import_xslx?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false#spring.datasource.username=root
+        password: ''
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+#                dialect: org.hibernate.dialect.MySQL5Dialect
+                current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        show-sql: true
+minio:
+    endpoint: http://127.0.0.1:9000
+    port: 9000
+    accessKey: minioadmin #Login Account
+    secretKey: minioadmin # Login Password
+    secure: false
+    bucket-name: firstsbucket # Bucket Name
+    image-size: 10485760 #  Maximum size of picture file
+    file-size: 1073741824 #  Maximum file size
+
+
